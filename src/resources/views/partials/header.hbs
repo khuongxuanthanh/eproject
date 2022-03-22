@@ -1,0 +1,202 @@
+<div class="header">
+    <div class="grid">
+        <div class="logo">
+            <a href="/" title="Astronomy Magazine">
+                <img src="/img/logo.png" alt="Astronomy Magazine" width="30%" height="30%">
+            </a>
+        </div>
+        <div class="header-user">
+            <button class="js-login-ticket">LOGIN</button> <span>or</span>
+            <button class="js-register-ticket">REGISTER</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal">
+   <div class="modal__overlay"></div>
+
+   <div class="modal__body">
+
+        <!-- Register form -->
+       <div class="auth-form modal-register">
+           <div class="auth-form__container">
+               <div class="auth-form__header">
+                   <h3 class="auth-form__heading">REGISTER</h3>
+               </div>
+
+               <div class="auth-form__form">
+                   <label class="auth-form__group">
+                       <input type="number" class="auth-form__input" placeholder="Phone number">
+                   </label>
+               </div>
+
+               <div class="auth-form__controls">
+                   <button class="btn btn--primary">NEXT</button>
+               </div>
+               <form class="form-inline">
+                   <div class="form-group mb-2">
+                       <label for="staticEmail2" class="sr-only">Email</label>
+                       <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                   </div>
+                   <div class="form-group mx-sm-3 mb-2">
+                       <label for="inputPassword2" class="sr-only">Password</label>
+                       <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                   </div>
+                   <div class="form-group mx-sm-3 mb-2">
+                       <label for="inputPassword2" class="sr-only">Password</label>
+                       <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                   </div>
+                   <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+               </form>
+
+               <div class="auth-form__or">
+                   <span class="auth-form__or-separate"></span>
+                   <p>OR</p>
+                   <span class="auth-form__or-separate"></span>
+               </div>
+
+               <div class="auth-form__socials">
+                   <a href="" class="btn btn--with-icon">
+                       <i class="fab fa-facebook btn--with-icon-facebook"></i>
+                       Facebook
+                   </a>
+                   <a href="" class="btn btn--with-icon">
+                       <i class="fab fa-google btn--with-icon-google"></i>
+                       Google
+                   </a>
+                   <a href="" class="btn btn--with-icon">
+                       <i class="fab fa-apple btn--with-icon-apple"></i>
+                       Apple
+                   </a>
+               </div>
+
+               <div class="auth-form__aside">
+                   <p class="auth-form__policy-text">
+                       By registering, you agree to Astronomy about<br/>
+                       <a href="" class="auth-form__text-link">Terms of Service</a>&
+                       <a href="" class="auth-form__text-link">Privacy Policy</a>
+                   </p>
+                   <p class="auth-form__policy-text auth-form__policy-span">
+                       <span>Do you already have an account?</span>
+                       <a class="auth-form__text-link js-login-hide">Login</a>
+                   </p>
+                   <div class="close-login js-closeR">
+                       <i class="fa-solid fa-xmark"></i>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+        <!-- Login form -->
+       <div class="auth-form modal-login">
+           <div class="auth-form__container">
+               <div class="auth-form__header">
+                   <h3 class="auth-form__heading">Login</h3>
+               </div>
+
+               <div class="auth-form__form">
+                   <label class="auth-form__group">
+                       <input type="text" class="auth-form__input" placeholder="Email/Phone number/Use name">
+                   </label>
+                   <label class="auth-form__group">
+                       <input type="password" class="auth-form__input" placeholder="Password">
+                   </label>
+               </div>
+
+               <div class="auth-form__controls">
+                   <button class="btn btn--primary">LOGIN</button>
+               </div>
+
+               <div class="auth-form__help">
+                   <a href="" class="auth-form__help-link">Forgot password</a>
+                   <a href="" class="auth-form__help-link">Login with SMS</a>
+               </div>
+
+               <div class="auth-form__or">
+                   <span class="auth-form__or-separate"></span>
+                   <p>OR</p>
+                   <span class="auth-form__or-separate"></span>
+               </div>
+
+               <div class="auth-form__socials">
+                   <a href="#" class="btn btn--with-icon">
+                       <i class="fab fa-facebook btn--with-icon-facebook"></i>
+                       Facebook
+                   </a>
+                   <a href="#" class="btn btn--with-icon">
+                       <i class="fab fa-google btn--with-icon-google"></i>
+                       Google
+                   </a>
+                   <a href="#" class="btn btn--with-icon">
+                       <i class="fab fa-apple btn--with-icon-apple"></i>
+                       Apple
+                   </a>
+               </div>
+
+               <div class="auth-form__aside">
+                   <p class="auth-form__policy-text auth-form__policy-span">
+                       <span>New to Astronomy?</span>
+                       <a class="auth-form__text-link js-register-hide">Register</a>
+                   </p>
+               </div>
+               <div class="close-login js-closeL">
+                   <i class="fa-solid fa-xmark"></i>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+<script>
+    const modal = document.querySelector('.modal')
+    const modalContainer = document.querySelector('.modal__overlay')
+
+    const clickLogin = document.querySelector('.js-login-ticket')
+    const modalLogin = document.querySelector('.modal-login')
+    const removeLogin = document.querySelector('.js-register-hide')
+    const modalCloseL = document.querySelector('.js-closeL')
+
+    const clickRegister = document.querySelector('.js-register-ticket')
+    const modalRegister = document.querySelector('.modal-register')
+    const RemoveRegister = document.querySelector('.js-login-hide')
+    const modalCloseR = document.querySelector('.js-closeR')
+
+// click open login
+    function showLogin() {
+        modal.classList.add('open')
+        modalLogin.classList.add('open')
+        modalRegister.classList.remove('open')
+    }
+    clickLogin.addEventListener('click', showLogin)
+
+// click open register
+    function showRegister() {
+        modal.classList.add('open')
+        modalRegister.classList.add('open')
+        modalLogin.classList.remove('open')
+    }
+    clickRegister.addEventListener('click', showRegister)
+
+// hide login
+    function hideLogin() {
+        modalLogin.classList.remove('open')
+        modalRegister.classList.add('open')
+    }
+    removeLogin.addEventListener('click', hideLogin)
+
+// hide register
+    function hideRegister() {
+        modalRegister.classList.remove('open')
+        modalLogin.classList.add('open')
+    }
+    RemoveRegister.addEventListener('click', hideRegister)
+
+// hide modal
+
+    function hideModal() {
+        modal.classList.remove('open')
+    }
+    modalCloseL.addEventListener('click', hideModal)
+    modalCloseR.addEventListener('click', hideModal)
+    modalContainer.addEventListener('click', hideModal)
+</script>
