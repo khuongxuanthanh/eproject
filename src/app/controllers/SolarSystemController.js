@@ -1,14 +1,14 @@
-const Course = require('../models/Course');
+const Solarsystem = require('../models/Course');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
 
 class SolarSystemController {
     // [GET] /solarSystem
     index(req, res, next) {
-        Course.find({})
-            .then(courses => {
+        Solarsystem.find({})
+            .then(solarsystems => {
                 res.render('solarSystem', { 
-                    courses: mutipleMongooseToObject(courses)
+                    solarsystems: mutipleMongooseToObject(solarsystems)
                 });
             })
             .catch(next);
@@ -17,10 +17,10 @@ class SolarSystemController {
     // [GET] /solarSystem/:slug
     show(req, res, next) {
         // res.send('SYSTEM DETAIL-'+ req.params.slug);
-        Course.findOne({ slug: req.params.slug })
-            .then(course => {
+        Solarsystem.findOne({ slug: req.params.slug })
+            .then(solarsystem => {
                 res.render('solarsystem/show', { 
-                    course: mongooseToObject(course) 
+                    solarsystem: mongooseToObject(solarsystem) 
                 });
             })
             .catch(next);
@@ -33,45 +33,45 @@ class SolarSystemController {
     
     // [GET] /solarSystem/edit
     edit(req, res, next) {
-        Course.findById(req.params.id)
-        .then(course => res.render('solarsystem/edit', {
-            course: mongooseToObject(course)
+        Solarsystem.findById(req.params.id)
+        .then(solarsystem => res.render('solarsystem/edit', {
+            solarsystem: mongooseToObject(solarsystem)
         }))
         .catch(next);
     }
 
     // [DELETE] /solarSystem/:id
     destroy(req, res, next) {
-        Course.delete({ _id: req.params.id })
+        Solarsystem.delete({ _id: req.params.id })
             .then(() => res.redirect('back'))
             .catch(next);
     }
 
     // [DELETE] /solarSystem/:id/force
     forceDestroy(req, res, next) {
-        Course.deleteOne({ _id: req.params.id })
+        Solarsystem.deleteOne({ _id: req.params.id })
             .then(() => res.redirect('back'))
             .catch(next);
     }
     
     // [PUT] /solarSystem/:id
     update(req, res, next) {
-        Course.updateOne({ _id: req.params.id }, req.body)
+        Solarsystem.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/me/stored/solarSystem'))
             .catch(next)
     }
     
     // [PATCH] /solarSystem/:id/restore 
     restore(req, res, next) {
-        Course.restore({ _id: req.params.id})
+        Solarsystem.restore({ _id: req.params.id})
         .then(() => res.redirect('back'))
         .catch(error => {});
     }
 
     // [POST] /solarSystem/store
     store(req, res, next) {
-        const course = new Course(req.body);
-        course.save()
+        const solarsystem = new Solarsystem(req.body);
+        solarsystem.save()
             .then(() => res.redirect('/me/stored/solarsystem'))
             .catch(error => {});
     }

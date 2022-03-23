@@ -1,17 +1,17 @@
 <div class="mt-4">
     <h3>Edit post Solarsystem</h3>
-    <form class="mt-4" method="POST" action="/solarsystem/{{course._id}}?_method=PUT">
+    <form class="mt-4" method="POST" action="/solarsystem/{{solarsystem._id}}?_method=PUT">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" value="{{course.name}}" id="name" name="name">
+            <input type="text" class="form-control" value="{{solarsystem.name}}" id="name" name="name">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description">{{course.description}}</textarea>
+            <textarea class="form-control" id="description" name="description">{{solarsystem.description}}</textarea>
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="text" class="form-control" value="{{course.image}}" id="image" name="image">
+            <input type="text" class="form-control" value="{{solarsystem.image}}" id="image" name="image">
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
