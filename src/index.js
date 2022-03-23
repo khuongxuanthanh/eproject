@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars');
 const methodOverride = require('method-override');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const app = express();
 const port = process.env.port || 5080;
 
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 // HTTP logger
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // Template engine
 app.engine('hbs',engine({ extname: '.hbs' }),
