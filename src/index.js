@@ -23,8 +23,12 @@ app.use(methodOverride('_method'));
 // app.use(morgan('combined'));
 
 // Template engine
-app.engine('hbs',engine({ extname: '.hbs' }),
-);
+app.engine('hbs',engine({ 
+    extname: '.hbs',
+    helpers: {
+        sum: (a, b) => a + b,
+    }
+ }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
