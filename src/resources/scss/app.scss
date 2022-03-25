@@ -10,6 +10,7 @@ html {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
+    height: 100%;
 }
 
 .grid__full-width {
@@ -63,21 +64,24 @@ html {
     height: 199px;
     border-bottom: 1px solid #626262;
     background: url(/img/header-bg.jpg) no-repeat;
-    position: relative;
     background-size: cover;
     background-position: center;
 }
 
+.header-layout {
+    position: relative;
+}
+
 .header .logo {
     position: absolute;
-    margin-top: 2.5%;
+    bottom: 16%;
     color: $white-color;
 }
 
 .header-user {
     position: absolute;
     top: 32px;
-    right: 66px;
+    right: 0;
     color: #999;
     font-size: 1.2rem;
 }
@@ -100,6 +104,12 @@ html {
 
 .header-user span {
     font-size: 1rem;
+}
+
+// CSS Menu
+.collapse {
+    width: 1200px;
+    margin: auto;
 }
 
 /* CSS Modal */
