@@ -1,21 +1,80 @@
-<div class="mt-4">
-    <div class="row">
+<div class="solar">
+    <div class="grid">
+        <div class="grid__row">
+            <div class="grid__column-2">
+                <nav class="category">
+                    <h3 class="category__heading">
+                        Category
+                    </h3>
 
-        {{#each solarsystems}}
-        <div class="col-sm-6 col-lg-4">
-            <div class="card">
-                <a href="/solarSystem/{{this.slug}}">
-                    <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
-                </a>
-                <div class="card-body">
-                    <a href="/solarSystem/{{this.slug}}">
-                        <h5 class="card-title">{{this.name}}</h5>
-                    </a>
-                    <p class="card-text">{{this.description}}</p>
-                    <a href="/solarSystem/{{this.slug}}" class="btn btn-primary">Go somewhere</a>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="/SolarSystem/solarsystemintroduction" class="category-item__link">Introduction</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/sun" class="category-item__link">Sun</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/mercury" class="category-item__link">Mercury</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/venus" class="category-item__link">Venus</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/earth" class="category-item__link">Earth</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/mars" class="category-item__link">Mars</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/jupiter" class="category-item__link">Jupiter</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/saturn" class="category-item__link">Saturn</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/uranus" class="category-item__link">Uranus</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/neptune" class="category-item__link">Neptune</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/pluto" class="category-item__link">Pluto</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/asteroids" class="category-item__link">Asteroids</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/comets" class="category-item__link">Comets</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="/SolarSystem/meteoroids" class="category-item__link">Meteoroids and Meteorites</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="grid__column-10">
+                <div class="grid__row">
+                    {{#each solarsystems}}
+                    <div class="grid__column-3_10">
+                        <a href="/solarSystem/{{this.slug}}" class="h-product-item">
+                            <div class="h-product-item__img"
+                                    style=" background-image:
+                                    url({{this.image}})">
+                                <div class="h-product-item__info">
+                                    <div class="h-product-item__origin">
+                                        <p class="h-product-item__name">{{this.description}}</p>
+                                    </div>
+                                    <p class="h-product-item__brand">{{this.name}}</p>
+                                    {{!-- <p>{{this.createdAt}}</p> --}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
                 </div>
             </div>
         </div>
-        {{/each}}
     </div>
 </div>
