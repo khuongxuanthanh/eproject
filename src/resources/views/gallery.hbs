@@ -1,0 +1,102 @@
+<h1>Gallery</h1>
+<div class="row">
+    <div class="col-2">
+        <nav class="category">
+            <h3 class="category__heading">
+                <b>Category</b>
+            </h3>
+
+            <ul class="category-list">
+                <li class="category-item category-item-active">
+                    <a href="/photos" class="category-item__link">Photos</a>
+                </li>
+                <li class="category-item category-item-active">
+                    <a href="/videos" class="category-item__link">Videos</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-10">
+        <h5><a href="/gallery/create">Create Image</a></h5>
+        <h1>Images Collection</h1>
+        <div class="wrap">
+            {{#each gallerys}}
+            <div class="image">
+                <img src="{{this.image}}">
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="gallery">
+    <div class="close">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="next">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+    <div class="pre">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="inner_img">
+        <img src="/img/img3.jpg"/>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var close = document.querySelector('.close');
+    var next = document.querySelector('.next');
+    var previous = document.querySelector('.pre');
+    var gallery = document.querySelector('.gallery');
+    var clickimg = document.querySelectorAll('.image img');
+    var galleryImg = document.querySelector('.inner_img img');
+
+    var currentIndex = 0;
+
+    function display() {
+        if (currentIndex == 0){
+            previous.classList.add('hide')
+        }else{
+            previous.classList.remove('hide')
+        }
+        if (currentIndex == clickimg.length - 1){
+            next.classList.add('hide')
+        }else{
+            next.classList.remove('hide')
+        }
+
+        galleryImg.src = clickimg[currentIndex].src
+        gallery.classList.add('show')
+    }
+
+    clickimg.forEach((item, index)=>{
+        item.addEventListener('click', function () {
+            currentIndex = index
+            display()
+        })
+    })
+
+    close.addEventListener('click',function () {
+        gallery.classList.remove('show')
+    })
+
+    document.addEventListener('keydown',function (e) {
+        if (e.keyCode == 27){
+            gallery.classList.remove('show')
+        }
+    })
+
+    next.addEventListener('click',function () {
+        if (currentIndex < clickimg.length - 1){
+            currentIndex++
+            display()
+        }
+    })
+
+    previous.addEventListener('click',function () {
+        if (currentIndex > 0){
+            currentIndex--
+            display()
+        }
+    })
+</script>
