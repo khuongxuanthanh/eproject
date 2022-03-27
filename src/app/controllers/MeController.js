@@ -2,8 +2,8 @@ const Solarsystem = require('../models/Course');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 class MeController {
-    // [GET] /me/stored/solarsystem
-    storedSolarsystem(req, res, next) {
+    // [GET] /me/stored/solarsystems
+    storedSolarsystems(req, res, next) {
 
         Promise.all([Solarsystem.find({}), Solarsystem.countDocumentsDeleted()])
             .then(([solarsystems, deletedCount]) => 
@@ -15,8 +15,8 @@ class MeController {
             .catch(next);
     }
 
-    // [GET] /me/trash/solarsystem
-    trashSolarsystem(req, res, next) {
+    // [GET] /me/trash/solarsystems
+    trashSolarsystems(req, res, next) {
         Solarsystem.findDeleted({})
             .then(solarsystems => 
                 res.render('me/trash-solarsystem', {

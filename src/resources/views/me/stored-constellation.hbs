@@ -1,10 +1,9 @@
-
 <div class="mt-4">
     <div>
         <h3>My post</h3>
-        <a href="/me/trash/solarsystem">Recycle Bin: ({{deletedCount}})</a>
+        <a href="/me/trash/constellations">Recycle Bin: ({{deletedCount}})</a>
         <div class="mt-4 d-flex align-items-center">
-            <div class="form-check post-item">
+            <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">
                     Check all
@@ -14,52 +13,14 @@
                 <option>-- Hành động --</option>
                 <option>Delete</option>
                 <option>3</option>
+                <option>4</option>
+                <option>5</option>
             </select>
 
             <button class="btn btn-primary btn-sm disabled">Thực hiện</button>
 
         </div>
     </div>
-    <h3>Post Solar system</h3>
-    <table class="table mt-4 table-hover">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">#</th>
-                <th scope="col">Post name</th>
-                <th scope="col" colspan="2">Posting time </th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each solarsystems}}
-            <tr>
-                <td>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="solarsystemIds[]" value="{{this._id}}">
-                    </div>
-                </td>
-                <th scope="row">{{sum @index 1}}</th>
-                <td>{{this.name}}</td>
-                <td>{{this.createdAt}}</td>
-                <td>
-                    <a href="/solarSystem/{{this._id}}/edit" class="btn btn-link">Edit</a>
-                    <a class="btn btn-link" data-toggle="modal" data-id="{{this._id}}" 
-                    data-target="#delete-solarsystem-modal">
-                        Delete
-                    </a>
-                </td>
-            </tr> 
-            {{else}}
-                <tr>
-                    <td colspan="3">
-                        You have not posted any posts yet.
-                        <a href="/solarSystem/create">Create post</a>
-                    </td>
-                </tr>
-            {{/each}}
-        </tbody>
-    </table>
-    <h3>Post News</h3>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -101,7 +62,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="delete-solarsystem-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="delete-constellation-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -114,30 +75,30 @@
                 <p>You definitely want to delete this post</p>
             </div>
             <div class="modal-footer">
-                <button id="btn-delete-solarsystem" type="button" class="btn btn-danger">Delete</button>
+                <button id="btn-delete-constellation" type="button" class="btn btn-danger">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
 </div>
 
-<form name="delete-solarsystem-form" method="POST"></form>
+<form name="delete-constellation-form" method="POST"></form>
 
 <script>
 
     document.addEventListener('DOMContentLoaded', function() {
         var courseId;
-        var deleteForm = document.forms['delete-solarsystem-form'];
-        var btnDeleteSolarsystem = document.getElementById('btn-delete-solarsystem');
+        var deleteForm = document.forms['delete-constellation-form'];
+        var btnDeleteConstellation = document.getElementById('btn-delete-constellation');
         
-        // when delete solarSystem btn clicked
-        $('#delete-solarsystem-modal').on('show.bs.modal', function (event) {
+        // when delete constellation btn clicked
+        $('#delete-constellation-modal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             courseId = button.data('id');
         });
 
-        btnDeleteSolarsystem.onclick = function () {
-            deleteForm.action = '/solarSystem/' + courseId + '?_method=DELETE';
+        btnDeleteConstellation.onclick = function () {
+            deleteForm.action = '/constellation/' + courseId + '?_method=DELETE';
             deleteForm.submit();
         }
     });

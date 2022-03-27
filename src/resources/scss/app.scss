@@ -55,6 +55,23 @@ html {
     width: 50%;
 }
 
+.my_post {
+    width: 1200px;
+    margin: auto;
+}
+
+.my_post .table td, .my_post .table th {
+    padding: 0;
+    vertical-align: unset;
+}
+
+.my_post .form-check-input {
+    margin-top: -0.7rem;
+}
+
+.my_post .post-item .form-check-input {
+    margin-top: 6px;
+}
 // Accout CSS
 
 .user-avatar {
@@ -67,7 +84,7 @@ html {
 /* CSS Header */
 
 .header {
-    height: 199px;
+    height: 160px;
     border-bottom: 1px solid #626262;
     background: url(/img/header-bg.jpg) no-repeat;
     background-size: cover;
@@ -84,9 +101,13 @@ html {
     color: $white-color;
 }
 
+.header .logo img {
+    width: 28%;
+}
+
 .header-user {
     position: absolute;
-    top: 32px;
+    top: 16px;
     right: 0;
     color: #999;
     font-size: 1.2rem;
@@ -98,7 +119,7 @@ html {
     font-size: 14px;
     cursor: pointer;
     width: 100px;
-    padding: 3px;
+    padding: 3px 0;
     border-radius: 25px;
 
     background-color: gray;
@@ -116,6 +137,14 @@ html {
 .collapse {
     width: 1200px;
     margin: auto;
+}
+
+.menu-item {
+    display: flex;
+}
+
+.navbar-nav {
+    width: 100%;
 }
 
 /* CSS Modal */
@@ -355,13 +384,7 @@ html {
 .guide {
     text-align: center;
 }
-.home-item h1,
-h2,
-h3,
-h4 {
-    font-size: 32px;
-    text-align: center;
-}
+
 .home-item h1 {
     margin: 0 auto;
     width: 350px;
@@ -477,6 +500,10 @@ h4 {
     background-color: $white-color;
 }
 
+.category p {
+    margin-bottom: 0;
+}
+
 .category__heading {
     color: $text-color;
     font-size: 1.5rem;
@@ -547,6 +574,12 @@ h4 {
 }
 
 // 
+.h_layout {
+    width: 1200px;
+    margin: auto;
+    border: solid 1px #e1e1e1;
+}
+
 .h-product-item {
     display: block;
     margin-top: 10px;
@@ -848,24 +881,26 @@ video {
 /* CSS Footer */
 .footer {
     background: url(/img/footer-bg.jpg) no-repeat;
-    min-height: 160px;
+    min-height: 140px;
     background-size: cover;
     background-position: center;
 }
 
-.footer-layout {
+.footer-item {
     display: flex;
+    justify-content: space-between;
 }
 
 .footer-nav {
-    float: left;
-    padding-right: 32px;
-    padding-top: 32px;
+    display: flex;
+    padding-top: 16px;
+    width: 30%;
+    justify-content: space-between;
+    position: relative;
 }
 
 .footer-nav ul {
-    float: left;
-    padding-right: 32px;
+    padding: 8px 0;
 }
 
 .footer-nav ul li {
@@ -874,31 +909,26 @@ video {
 
 .footer-nav ul li a {
     text-decoration: none;
-    line-height: 24px;
-    font-size: 1.4rem;
+    line-height: 14px;
+    font-size: 1rem;
+    color: $black-color;
+    font-weight: 600;
+}
+
+.footer-nav img {
+    width: 68%;
 }
 
 .social-list {
-    margin: auto 68px;
+    position: absolute;
+    top: 16px;
+    right: 0;
 }
 
 .social-list a {
     padding: 8px;
-    color: $white-color;
+    color: $black-color;
     font-size: 24px;
-}
-
-#footertext {
-    padding: 0;
-    float: right;
-    margin-right: -20%;
-    margin-top: -10%;
-}
-#footertext a {
-    color: black;
-}
-#footertext a:hover {
-    color: violet;
 }
 
 // CSS stores solarsystem
@@ -907,3 +937,30 @@ video {
     width: 160px;
     margin: 0 12px;
 }
+
+// CSS Contact
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+
+ }

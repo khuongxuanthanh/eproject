@@ -1,4 +1,4 @@
-<div class="solar">
+<div class="h_layout">
     <div class="grid">
         <div class="grid__row">
             <div class="grid__column-2">
@@ -7,50 +7,11 @@
                         Category
                     </h3>
 
-                    <ul class="category-list">
-                        <li class="category-item">
-                            <a href="/SolarSystem/solarsystemintroduction" class="category-item__link">Introduction</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/sun" class="category-item__link">Sun</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/mercury" class="category-item__link">Mercury</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/venus" class="category-item__link">Venus</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/earth" class="category-item__link">Earth</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/mars" class="category-item__link">Mars</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/jupiter" class="category-item__link">Jupiter</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/saturn" class="category-item__link">Saturn</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/uranus" class="category-item__link">Uranus</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/neptune" class="category-item__link">Neptune</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/pluto" class="category-item__link">Pluto</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/asteroids" class="category-item__link">Asteroids</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/comets" class="category-item__link">Comets</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="/SolarSystem/meteoroids" class="category-item__link">Meteoroids and Meteorites</a>
-                        </li>
-                    </ul>
+                    {{#each solarsystems}}
+                    <p class="category-item">
+                        <a href="#" class="category-item__link">{{this.name}}</a>
+                    </p>
+                    {{/each}}
                 </nav>
             </div>
 

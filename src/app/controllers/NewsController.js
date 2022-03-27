@@ -1,13 +1,13 @@
-const Course = require('../models/Course');
-const { mutipleMongooseToObject } = require('../../util/mongoose');
+const New = require('../models/News');
+const { mutipleMongooseToObject } = require('../../util/mongoose_new');
 
 class NewsController {
     // [GET] /news
     index(req, res, next) {
-        Course.find({})
-            .then(courses => {
+        New.find({})
+            .then(news => {
                 res.render('news', { 
-                    courses: mutipleMongooseToObject(courses)
+                    news: mutipleMongooseToObject(news)
                 });
             })
             .catch(next);

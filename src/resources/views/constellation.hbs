@@ -7,7 +7,7 @@
                         Category
                     </h3>
 
-                    {{#each news}}
+                    {{#each constellations}}
                     <p class="category-item">
                         <a href="#" class="category-item__link">{{this.name}}</a>
                     </p>
@@ -17,12 +17,12 @@
 
             <div class="grid__column-10">
                 <div class="grid__row">
-                    {{#each news}}
+                    {{#each constellations}}
                     <div class="grid__column-3_10">
-                        <a href="/news/{{this.slug}}" class="h-product-item">
+                        <a href="/constellation/{{this.slug}}" class="h-product-item">
                             <div class="h-product-item__img"
                                     style=" background-image:
-                                    url(/img/news/{{this.image}})">
+                                    url(/img/conste2/{{this.image}})">
                                 <div class="h-product-item__info">
                                     <div class="h-product-item__origin">
                                         <p class="h-product-item__name">{{this.description}}</p>
